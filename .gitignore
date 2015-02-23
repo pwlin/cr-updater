@@ -1,2 +1,6 @@
-/cache/
-/config/development/
+.buildpath
+.project
+.settings
+Chrome-bin
+start-chromium-portable.bat
+prefs.ini
