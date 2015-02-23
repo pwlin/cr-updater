@@ -7,7 +7,7 @@
  * You can also run this script directly from github:
  * curl https://raw.githubusercontent.com/pwlin/cr-updater/master/updater.php | php
  * Or the tinyurl of it:
- * curl -L http://tinyurl.com/crmdevu | php
+ * curl -L https://tinyurl.com/cr-updater | php
  * On Linux (Debian), Chromium itself needs the following shared libraries:
  * libxss1
  * libnss3
@@ -23,16 +23,37 @@
  * [Linux] Note 2:
  * Run Chromium with the following argument to disable setuid errors:
  * --disable-setuid-sandbox (not recommended) 
+ *
+ *
+ * The MIT License (MIT)
+
+ * Copyright (c) 2015 pwlin05@gmail.com - https://github.com/pwlin/cr-updater
+
+ * Permission is hereby granted, free of charge, to any person obtaining a copy
+ * of this software and associated documentation files (the "Software"), to deal
+ * in the Software without restriction, including without limitation the rights
+ * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ * copies of the Software, and to permit persons to whom the Software is
+ * furnished to do so, subject to the following conditions:
+ 
+ * The above copyright notice and this permission notice shall be included in all
+ * copies or substantial portions of the Software.
+
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ * SOFTWARE.
  */
 
 error_reporting(E_ALL|E_STRICT);
 ini_set('display_errors', '1');
-
 define('VER', '0.3');
 define('DIR_SEP', DIRECTORY_SEPARATOR);
 define('INIT_DIR', __DIR__);
 define('WIN_BIN_DIR', realpath(INIT_DIR . DIR_SEP . 'win-bin'));
-
 
 class CrUpdater {
 	
@@ -62,13 +83,13 @@ class CrUpdater {
 			$this->unzipDownloadedFile();
 			$this->onBeforeEnd();
 			$this->onEnd();
+            $this->prnt('Done. Exiting...');
 		} else {
 			$this->prnt('You already have the latest Chromium version - build: '. $lastChange . PHP_EOL . 'No need to download.');
 			$this->cleanUpTempDirectory();
 			$this->prnt('Done. Exiting...');
 		}
-		
-	}
+    }
 	
 	private function setOSType() {
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' || strtoupper(substr(PHP_OS, 0, 6)) === 'CYGWIN') {
@@ -183,28 +204,28 @@ class CrUpdater {
 		if ($this->osType === 'win32') {
 			$this->prefsFile = INIT_DIR . DIR_SEP . 'prefs.ini';
 		} elseif ($this->osType === 'linux') {
-			$configFolder = DIR_SEP . 'home' . DIR_SEP . $this->username . DIR_SEP . '.config' . DIR_SEP . 'cr-updater';
+			$configFolder = DIR_SEP . 'home' . DIR_SEP . $this->userName . DIR_SEP . '.config' . DIR_SEP . 'cr-updater';
 			$this->mkdir($configFolder);
 			$this->prefsFile = $configFolder . DIR_SEP . 'prefs.ini';
 		} elseif ($this->osType === 'mac') {
-			$configFolder = DIR_SEP . 'Users' . DIR_SEP . $this->username . DIR_SEP . '.config' . DIR_SEP . 'cr-updater'; 
+			$configFolder = DIR_SEP . 'Users' . DIR_SEP . $this->userName . DIR_SEP . '.config' . DIR_SEP . 'cr-updater'; 
 			$this->mkdir($configFolder);
 			$this->prefsFile = $configFolder . DIR_SEP . 'prefs.ini';
 		}
 	}
 	
 	private function defaultUnpackDir() {
-		$unpack_dir = '';
+		$unpackDir = '';
 		if ($this->osType === 'win32') {
-			$unpack_dir = INIT_DIR;
+			$unpackDir = INIT_DIR;
 		} elseif ($this->osType === 'linux') {
-			$unpack_dir = DIR_SEP . 'home' . DIR_SEP . $this->userName . DIR_SEP . 'programs' . DIR_SEP . 'ChromiumNightly';
-			$this->mkdir($unpack_dir);
+			$unpackDir = DIR_SEP . 'home' . DIR_SEP . $this->userName . DIR_SEP . 'programs' . DIR_SEP . 'ChromiumNightly';
+			$this->mkdir($unpackDir);
 		} elseif ($this->osType === 'mac') {
-			$unpack_dir = DIR_SEP . 'Applications' . DIR_SEP . 'ChromiumNightly';
-			$this->mkdir($unpack_dir);
+			$unpackDir = DIR_SEP . 'Applications' . DIR_SEP . 'ChromiumNightly';
+			$this->mkdir($unpackDir);
 		}
-		return $unpack_dir;
+		return $unpackDir;
 	}
 	
 	private function defaultBaseDownloadUrl() {
