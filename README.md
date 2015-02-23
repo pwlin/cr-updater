@@ -1,8 +1,12 @@
 # cr-updater
-This script will download and unpack the latest Chromium continuous build for Windows, Linux and Mac.
+This script will download and unpack the latest [Chromium continuous build](https://storage.googleapis.com/chromium-browser-continuous/index.html) for Windows, Linux and Mac.
 
 
 #For Linux
+You need `curl` and `unzip` installed:
+    
+    sudo apt-get -y install --no-install-recommends curl unzip
+
 Locally run:
 
     php updater.php
@@ -20,7 +24,7 @@ libxss1
 libnss3   
 libgconf-2-4  
 
-    apt-get -y install --no-install-recommends libxss1 libnss3 libgconf-2-4
+    sudo apt-get -y install --no-install-recommends libxss1 libnss3 libgconf-2-4
 
 Note 1
 ------
@@ -44,6 +48,10 @@ Run Chromium with the following argument to disable setuid errors:
     
 
 #For OSX
+You need `curl` and `unzip` installed:
+
+    brew install curl unzip
+
 Locally run:
 
     php updater.php
@@ -58,7 +66,10 @@ Or the tinyurl of it:
 
 #For Windows
 Locally run:
+
     updater.bat
+
+
 
 
     
