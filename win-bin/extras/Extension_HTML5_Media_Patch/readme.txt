@@ -1,0 +1,1 @@
+To test if it works, go to: http://www.sublimevideo.net/ and see if you can play the video.
