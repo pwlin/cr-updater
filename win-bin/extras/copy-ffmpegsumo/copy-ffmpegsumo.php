@@ -17,7 +17,7 @@ echo(PHP_EOL . 'Copying' . PHP_EOL . $sourceDLL . PHP_EOL . 'to' . PHP_EOL . $de
 
 system('copy /Y "' . $sourceDLL .  '" "' .  $destDLL . '" > NUL');
 
-echo(PHP_EOL . 'Done. Exiting...' . PHP_EOL . PHP_EOL);
+echo(PHP_EOL . 'Done.' . PHP_EOL . PHP_EOL);
 
 
 

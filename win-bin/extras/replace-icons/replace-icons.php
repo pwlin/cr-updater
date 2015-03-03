@@ -17,7 +17,7 @@ $destPak = $prefs['unpack_dir'] . DIRECTORY_SEPARATOR . 'Chrome-bin' . DIRECTORY
 system('"' . $winBinDir . DIRECTORY_SEPARATOR . 'node.exe" "' . $srcDir .  'main.js" replace "' . $destPak . '" 7081 "' . $srcDir . 'icons' . DIRECTORY_SEPARATOR . 'folder-blue1.png"');
 system('"' . $winBinDir . DIRECTORY_SEPARATOR . 'node.exe" "' . $srcDir .  'main.js" replace "' . $destPak . '" 5714 "' . $srcDir . 'icons' . DIRECTORY_SEPARATOR . 'default_icon.png"');
 
-echo(PHP_EOL . 'Done. Exiting...' . PHP_EOL . PHP_EOL);
+echo(PHP_EOL . 'Done.' . PHP_EOL . PHP_EOL);
 
 
 

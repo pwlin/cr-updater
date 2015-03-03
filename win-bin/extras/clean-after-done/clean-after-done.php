@@ -45,7 +45,7 @@ foreach (glob($targetDir . DIRECTORY_SEPARATOR . "*.manifest") as $filename) {
 }
 unset($filename);
 
-echo(PHP_EOL . 'Done. Exiting...' . PHP_EOL . PHP_EOL);
+echo(PHP_EOL . 'Done.' . PHP_EOL . PHP_EOL);
 
 
 
