@@ -34,11 +34,11 @@ If you get the following error:
     
 Do:
 
-    sudo ln -s /lib/x86_64-linux-gnu/libudev.so.1.3.5 /usr/lib/libudev.so.0
+    sudo ln -s /lib/x86_64-linux-gnu/libudev.so.1.6.4 /usr/lib/libudev.so.0
 
 Or:
 
-    sudo ln -s /lib/i386-linux-gnu/libudev.so.1.3.5 /usr/lib/libudev.so.0
+    sudo ln -s /lib/i386-linux-gnu/libudev.so.1.6.4 /usr/lib/libudev.so.0
     
 Note 2
 ------
