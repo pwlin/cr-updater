@@ -1,10 +1,10 @@
 @ECHO OFF
 
-ECHO Replacing Icons ...
-ECHO.
+::ECHO Replacing Icons ...
+::ECHO.
 CD replace-icons
-CALL replace-icons.bat
-ECHO.
+::CALL replace-icons.bat
+::ECHO.
 
 ECHO Copy ffmpegsumo.dll ...
 ECHO.

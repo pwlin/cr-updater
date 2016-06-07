@@ -92,6 +92,7 @@ class CrUpdater {
     }
 	
 	private function setOSType() {
+		//@TODO Win_x64 and Linux_x64
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN' || strtoupper(substr(PHP_OS, 0, 6)) === 'CYGWIN') {
 			$this->osType = 'win32';
 		} elseif (strtoupper(substr(PHP_OS, 0, 5)) === 'LINUX') {
@@ -230,7 +231,8 @@ class CrUpdater {
 	
 	private function defaultBaseDownloadUrl() {
 		//$url = 'https://commondatastorage.googleapis.com/chromium-browser-continuous';
-		$url = 'https://storage.googleapis.com/chromium-browser-continuous';
+		//$url = 'https://storage.googleapis.com/chromium-browser-continuous';
+		$url = 'https://storage.googleapis.com/chromium-browser-snapshots';
 		if ($this->osType === 'win32') {
 			$url .= '/Win';
 		} elseif ($this->osType === 'linux') {
