@@ -1,5 +1,5 @@
 # cr-updater
-This script will download and unpack the latest [Chromium snapshots build](https://storage.googleapis.com/chromium-browser-snapshots/index.html) for Windows, Linux and Mac.
+This script will download and unpack the latest [Chromium snapshot build](https://storage.googleapis.com/chromium-browser-snapshots/index.html) for Windows, Linux and Mac.
 
 
 #For Linux
