@@ -1,7 +1,7 @@
 <?php
 /**
- * Chromium Updater
- * This script downloads and unpacks the latest Chromium continuous build for Windows and Linux
+ * cr-Updater
+ * This script downloads and unpacks the latest Chromium snapshot build for Windows, Linux and Mac
  * @uses curl
  * @uses unzip
  * You can also run this script directly from github:
@@ -282,7 +282,7 @@ class CrUpdater {
 			$lastChange = trim(file_get_contents($saveTo));
 			return $lastChange;
 		} else {
-			$this->prnt('Sorry but I canot get the LAST_CHANGE file at:' . PHP_EOL . $this->prefs['base_download_url'] . '/LAST_CHANGE' . PHP_EOL . 'Exiting...');
+			$this->prnt('Sorry but I can not get the LAST_CHANGE file at:' . PHP_EOL . $this->prefs['base_download_url'] . '/LAST_CHANGE' . PHP_EOL . 'Exiting...');
 			exit(1);
 		}
 	}
