@@ -67,7 +67,7 @@ Or the tinyurl of it:
 #For Windows
 Locally run:
 
-    updater.bat
+    win-updater.bat
 
 
 
