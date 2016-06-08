@@ -3,7 +3,6 @@
 SET GOOGLE_API_KEY="no"
 SET GOOGLE_DEFAULT_CLIENT_ID="no"
 SET GOOGLE_DEFAULT_CLIENT_SECRET="no"
-::SET OS_WIN="yes"
 
 SET CRFOLDER=%~dp0
 IF "%1" == "" (
@@ -22,6 +21,7 @@ IF "%1" == "" (
 :: --disable-infobars
 :: --disable-web-security
 :: --user-agent="my UA"
+:: --remote-debugging-port=9222
 
 START %CRFOLDER%\App\Chrome-bin\chrome.exe ^
 --disk-cache-dir="%TEMP%\ChromiumPortable" ^
