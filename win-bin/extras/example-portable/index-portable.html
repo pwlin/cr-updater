@@ -1,8 +1,11 @@
 <html>
-<head>
-</head>
-<body>
-<script>
-document.write(navigator.userAgent);
-</script>
-</body>
+	<head>
+		<title>Chromium Portable</title>
+	</head>
+	<body>
+		<div id="userAgentContainer" style="font-family:'Segoe UI';padding:15px;background-color:#5A5A5A;color:#E2E2E2;"></div>
+		<script>
+			document.getElementById('userAgentContainer').innerHTML = navigator.userAgent;
+		</script>
+	</body>
+</html>

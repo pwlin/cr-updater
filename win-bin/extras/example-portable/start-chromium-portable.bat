@@ -3,6 +3,7 @@
 SET GOOGLE_API_KEY="no"
 SET GOOGLE_DEFAULT_CLIENT_ID="no"
 SET GOOGLE_DEFAULT_CLIENT_SECRET="no"
+::SET OS_WIN="yes"
 
 SET CRFOLDER=%~dp0
 IF "%1" == "" (
@@ -17,6 +18,11 @@ IF "%1" == "" (
 :: --ignore-gpu-blacklist
 :: --incognito
 :: --kiosk
+:: --start-fullscreen
+:: --disable-infobars
+:: --disable-web-security
+:: --user-agent="my UA"
+
 START %CRFOLDER%\App\Chrome-bin\chrome.exe ^
 --disk-cache-dir="%TEMP%\ChromiumPortable" ^
 --user-data-dir="%CRFOLDER%\Data\profile" ^
@@ -39,6 +45,25 @@ START %CRFOLDER%\App\Chrome-bin\chrome.exe ^
 --ignore-autocomplete-off-autofill ^
 --disable-client-side-phishing-detection ^
 --safebrowsing-disable-auto-update ^
+--safebrowsing-disable-download-protection ^
+--safebrowsing-disable-extension-blacklist ^
 --disable-new-avatar-menu ^
+--disable-background-networking ^
+--disable-bundled-ppapi-flash ^
+--disable-child-account-detection ^
+--disable-clear-browsing-data-counters ^
+--disable-contextual-search ^
+--disable-credit-card-scan ^
+--disable-dinosaur-easter-egg ^
+--disable-gaia-services ^
+--disable-hang-monitor ^
+--disable-login-animations ^
+--disable-new-profile-management ^
+--disable-notifications ^
+--dns-prefetch-disable ^
+--no-pings ^
+--no-network-profile-warning ^
+--no-first-run ^
+--non-material ^
 "%INDEX%"
 
