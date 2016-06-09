@@ -1,5 +1,9 @@
 @ECHO OFF
 
+IF "%PRODUCT%" == "" (
+	SET PRODUCT=Chromium
+)
+
 SET GOOGLE_API_KEY="no"
 SET GOOGLE_DEFAULT_CLIENT_ID="no"
 SET GOOGLE_DEFAULT_CLIENT_SECRET="no"
@@ -23,9 +27,9 @@ IF "%1" == "" (
 :: --user-agent="my UA"
 :: --remote-debugging-port=9222
 
-START %CRFOLDER%\App\Chrome-bin\chrome.exe ^
---disk-cache-dir="%TEMP%\ChromiumPortable" ^
---user-data-dir="%CRFOLDER%\Data\profile" ^
+START %CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe ^
+--disk-cache-dir="%TEMP%\%PRODUCT%Portable" ^
+--user-data-dir="%CRFOLDER%\%PRODUCT%-Data\profile" ^
 --disable-backing-store-limit ^
 --disable-async-dns ^
 --disable-account-consistency ^
@@ -66,4 +70,3 @@ START %CRFOLDER%\App\Chrome-bin\chrome.exe ^
 --no-first-run ^
 --non-material ^
 "%INDEX%"
-
