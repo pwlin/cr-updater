@@ -4,13 +4,13 @@ IF "%PRODUCT%" == "" (
 	SET PRODUCT=Chromium
 )
 
-SET GOOGLE_API_KEY="no"
-SET GOOGLE_DEFAULT_CLIENT_ID="no"
-SET GOOGLE_DEFAULT_CLIENT_SECRET="no"
+SET GOOGLE_API_KEY=no
+SET GOOGLE_DEFAULT_CLIENT_ID=no
+SET GOOGLE_DEFAULT_CLIENT_SECRET=no
 
 SET CRFOLDER=%~dp0
 IF "%1" == "" (
-    SET INDEX=%CRFOLDER%\index-portable.html
+    SET INDEX=%CRFOLDER%index-portable.html
 ) ELSE (
     SET INDEX=%1
 )
@@ -29,7 +29,7 @@ IF "%1" == "" (
 
 START %CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe ^
 --disk-cache-dir="%TEMP%\%PRODUCT%Portable" ^
---user-data-dir="%CRFOLDER%\%PRODUCT%-Data\profile" ^
+--user-data-dir="%CRFOLDER%%PRODUCT%-Data\profile" ^
 --disable-backing-store-limit ^
 --disable-async-dns ^
 --disable-account-consistency ^
