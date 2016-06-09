@@ -69,7 +69,9 @@ Locally run:
 
     win-updater.bat
 
+You can also download official Chrome builds for Windows:
 
+    win-updater.bat --product=chrome [--channel=stable|dev|beta] [--unpack-dir=...]
 
 
     
