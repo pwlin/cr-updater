@@ -9,13 +9,14 @@ SET GOOGLE_DEFAULT_CLIENT_ID=no
 SET GOOGLE_DEFAULT_CLIENT_SECRET=no
 
 SET CRFOLDER=%~dp0
+
 IF "%1" == "" (
-    SET INDEX=%CRFOLDER%index-portable.html
+    SET PARAMS="%CRFOLDER%index-portable.html"
 ) ELSE (
-    SET INDEX=%1
+	SET PARAMS=%*
 )
 
-:: Extra switches bases on http://peter.sh/experiments/chromium-command-line-switches/
+:: Extra switches based on http://peter.sh/experiments/chromium-command-line-switches/
 :: --host-rules="MAP * baz, EXCLUDE www.google.com"
 :: --ignore-certificate-errors
 :: --ignore-gpu-blacklist
@@ -27,7 +28,7 @@ IF "%1" == "" (
 :: --user-agent="my UA"
 :: --remote-debugging-port=9222
 
-START %CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe ^
+START "" "%CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe" ^
 --disk-cache-dir="%TEMP%\%PRODUCT%Portable" ^
 --user-data-dir="%CRFOLDER%%PRODUCT%-Data\profile" ^
 --disable-backing-store-limit ^
@@ -69,4 +70,4 @@ START %CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe ^
 --no-network-profile-warning ^
 --no-first-run ^
 --non-material ^
-"%INDEX%"
+%PARAMS%
