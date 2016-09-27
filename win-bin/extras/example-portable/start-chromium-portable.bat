@@ -11,7 +11,7 @@ SET GOOGLE_DEFAULT_CLIENT_SECRET=no
 SET CRFOLDER=%~dp0
 
 IF "%1" == "" (
-    SET PARAMS="%CRFOLDER%index-portable.html"
+    SET PARAMS="%CRFOLDER%index-portable.html?%PRODUCT%"
 ) ELSE (
 	SET PARAMS=%*
 )
