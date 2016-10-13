@@ -13,7 +13,7 @@ SET CRFOLDER=%~dp0
 IF "%1" == "" (
     SET PARAMS="%CRFOLDER%index-portable.html?%PRODUCT%"
 ) ELSE (
-	SET PARAMS=%*
+    SET PARAMS=%*
 )
 
 :: Extra switches based on http://peter.sh/experiments/chromium-command-line-switches/
@@ -27,6 +27,8 @@ IF "%1" == "" (
 :: --disable-web-security
 :: --user-agent="my UA"
 :: --remote-debugging-port=9222
+:: --disable-bundled-ppapi-flash
+:: --app=http://example.com/
 
 START "" "%CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe" ^
 --disk-cache-dir="%TEMP%\%PRODUCT%Portable" ^
@@ -54,7 +56,6 @@ START "" "%CRFOLDER%%PRODUCT%-App\Chrome-bin\chrome.exe" ^
 --safebrowsing-disable-extension-blacklist ^
 --disable-new-avatar-menu ^
 --disable-background-networking ^
---disable-bundled-ppapi-flash ^
 --disable-child-account-detection ^
 --disable-clear-browsing-data-counters ^
 --disable-contextual-search ^
