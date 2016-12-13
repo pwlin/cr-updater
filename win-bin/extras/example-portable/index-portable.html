@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Chromium Portable</title>
+		<title>Portable Index</title>
 	</head>
 	<body>
 		<div id="userAgentContainer" style="font-family:'Segoe UI';padding:15px;background-color:#5A5A5A;color:#E2E2E2;"></div>
 		<script>
-			document.getElementById('userAgentContainer').innerHTML = navigator.userAgent;
+			window.onload = function() {
+				var userAgent = navigator.userAgent,
+					product = document.location.search === '' ? '' : document.location.search.replace(/^\?/, '') + ' Portable';
+				document.title = product !== '' ? product : document.title;
+				document.getElementById('userAgentContainer').innerHTML = '' + (product !== '' ? '<div><strong>' + product + '</strong></div>' : '') + '<div>' + userAgent + '</div>';
+			};
 		</script>
 	</body>
 </html>
