@@ -1,5 +1,6 @@
 Chrome-bin
-prefs.ini
+/prefs.ini
 .buildpath
 .settings
 .project
+/win-updater-chrome-stable.bat
