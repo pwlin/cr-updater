@@ -427,7 +427,7 @@ class ChromeUpdater extends CrUpdater {
 				'chrome_stable_unpack_dir' => $this->defaultUnpackDir(),
 				'chrome_beta_unpack_dir' => $this->defaultUnpackDir(),
 				'chrome_dev_unpack_dir' => $this->defaultUnpackDir(),
-				'chrome_last_change_url' => 'http://portableapps.com/apps/internet/google_chrome_portable',
+				'chrome_last_change_url' => 'https://portableapps.com/apps/internet/google_chrome_portable',
 				'user_agent' => $this->defaultUserAgent(),
 		);
 		
@@ -465,7 +465,7 @@ class ChromeUpdater extends CrUpdater {
 			foreach($xPath->query("//a") as $node) {
 				$anchor = $node->getAttribute("href");
 				if (preg_match('/_online\.paf\.exe$/', $anchor)) {
-					preg_match('/^http:\/\/downloads\.sourceforge\.net\/portableapps\/GoogleChromePortable' . $chromeChannel . '_(.*)_online\.paf\.exe$/', $anchor, $matches);
+					preg_match('/^https:\/\/downloads\.sourceforge\.net\/portableapps\/GoogleChromePortable' . $chromeChannel . '_(.*)_online\.paf\.exe$/', $anchor, $matches);
 					if (!empty($matches[1])) {
 						unset($dom, $xPath);
 						$ret = array($matches[1], 'https://downloads.sourceforge.net/portableapps/GoogleChromePortable' . $chromeChannel . '_' . $matches[1] . '_online.paf.exe');
