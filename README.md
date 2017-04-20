@@ -2,7 +2,8 @@
 This script will download and unpack the latest [Chromium snapshot build](https://storage.googleapis.com/chromium-browser-snapshots/index.html) for Windows, Linux and Mac.
 
 
-#For Linux
+For Linux
+----------
 You need `curl` and `unzip` installed:
     
     sudo apt-get -y install --no-install-recommends curl unzip
@@ -47,7 +48,8 @@ Run Chromium with the following argument to disable setuid errors:
     --disable-setuid-sandbox (not recommended) 
     
 
-#For OSX
+For OSX
+--------
 You need `curl` and `unzip` installed:
 
     brew install curl unzip
@@ -64,7 +66,8 @@ Or the tinyurl of it:
 
     curl -L https://tinyurl.com/cr-updater | php
 
-#For Windows
+For Windows
+------------
 Locally run:
 
     win-updater.bat
