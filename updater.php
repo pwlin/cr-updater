@@ -343,7 +343,7 @@ class ChromiumUpdater extends CrUpdater {
     	if ($this->osType === 'win32') {
     		$url .= '/Win';
     	} elseif ($this->osType === 'linux') {
-    		$url .= '/Linux';
+    		$url .= '/Linux_x64';
     	} elseif ($this->osType === 'mac') {
     		$url .= '/Mac';
     	}
