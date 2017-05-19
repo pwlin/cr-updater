@@ -52,7 +52,7 @@ Or automate the following after each install:
     sudo mv chrome_sandbox chrome-sandbox
     sudo chown root chrome-sandbox
     sudo chmod 4755 chrome-sandbox
-    ./chrome-wrapper
+    (then use "./chrome-wrapper" to start Chromium)
 
 For OSX
 --------
