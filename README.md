@@ -45,9 +45,9 @@ Note 2
 ------
 Run Chromium with the following argument to disable setuid errors:
 
-    --disable-setuid-sandbox (not recommended) 
+    --no-sandbox (not recommended) 
   
-or
+Or:
 
     sudo mv chrome_sandbox chrome-sandbox
     sudo chown root chrome-sandbox
