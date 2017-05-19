@@ -39,7 +39,7 @@ Do:
 
 Or:
 
-    sudo ln -s /lib/i386-linux-gnu/libudev.so.1.6.4 /usr/lib/libudev.so.0
+    sudo ln -s /lib/i386-linux-gnu/libudev.so.1.6.4 /usr/lib/libudev.so.0 (deprecated)
     
 Note 2
 ------
